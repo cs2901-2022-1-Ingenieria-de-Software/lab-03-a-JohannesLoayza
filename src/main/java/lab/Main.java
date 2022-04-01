@@ -16,11 +16,18 @@ public class Main {
         ManageDemand mg = new ManageDemand(tax);
 
         List<Order> testOrders = buildSampleOrders();
+
+        ArrayList<Double> additional = new ArrayList<Double>();
         
+        additional.add(0.10);
+        additional.add(0.20);
+        additional.add(0.30);
+
         double resultFirst = mg.calculateTotal(testOrders);
         System.out.println(String.format("RESULTADO TOTAL 1 => %s", resultFirst));
 
-        double resultSecond = mg.calculateTotalForWithAdditionalByCountry(testOrders, 0.10, 0.20, 0.30);
+        //double resultSecond = mg.calculateTotalForWithAdditionalByCountry(testOrders, 0.10, 0.20, 0.30);
+        double resultSecond = mg.calculateTotalForWithAdditionalByCountry(testOrders, additional);
         System.out.println(String.format("RESULTADO TOTAL 2 => %s", resultSecond));
     }
 
